@@ -1,0 +1,106 @@
+<%- model_class = @person.class -%> <h1>Pessoa</h1>
+<hr/>
+<dl class="dl-horizontal">
+	<dt>
+		<strong>Nome:</strong>
+	</dt>
+	<dd>
+		<%= @person.name %>
+	</dd>
+	<dt>
+		<strong>Endereco:</strong>
+	</dt>
+	<dd>
+		<%= @person.address %>
+	</dd>
+	<dt>
+		<strong>"Numero":</strong>
+	</dt>
+	<dd>
+		<%= @person.number %>
+	</dd>
+	<dt>
+		<strong>"Complemento":</strong>
+	</dt>
+	<dd>
+		<%= @person.complement %>
+	</dd>
+	<dt>
+		<strong>"Bairro":</strong>
+	</dt>
+	<dd>
+		<%= @person.district %>
+	</dd>
+	<dt>
+		<strong>"CEP":</strong>
+	</dt>
+	<dd>
+		<%= @person.zipcode %>
+	</dd>
+	<dt>
+		<strong>Cidade:</strong>
+	</dt>
+	<dd>
+		<%= @person.city_id %>
+	</dd>
+	<dt>
+		<strong>CPF:</strong>
+	</dt>
+	<dd>
+		<%= @person.cpf %>
+	</dd>
+	<dt>
+		<strong>RG:</strong>
+	</dt>
+	<dd>
+		<%= @person.rg %>
+	</dd>
+	<dt>
+		<strong>CNPJ:</strong>
+	</dt>
+	<dd>
+		<%= @person.cnpj %>
+	</dd>
+	<dt>
+		<strong>IE:</strong>
+	</dt>
+	<dd>
+		<%= @person.ie %>
+	</dd>
+	<dt>
+		<strong>Aniversario:</strong>
+	</dt>
+	<dd>
+		<%= @person.date_birth.strftime("%d/%m/%Y")  %>
+	</dd>
+	<dt>
+		<strong>Cadastro:</strong>
+	</dt>
+	<dd>
+		<%= @person.date_registration.strftime("%d/%m/%Y")  %>
+	</dd>
+	<dt>
+		<strong>Email:</strong>
+	</dt>
+	<dd>
+		<%= @person.email %>
+	</dd>
+	<dt>
+		<strong>Funcao:</strong>
+	</dt>
+	<dd>
+		<%= @person.profile_id %>
+	</dd>
+</dl>
+
+<div class="form-actions">
+	<%= link_to "Voltar",
+	people_path, :class => 'btn'  %>
+	<%= link_to "Editar",
+	edit_person_path(@person), :class => 'btn' %>
+	<%= link_to "Excluir",
+	person_path(@person),
+	:method => 'delete',
+	:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Confirma ?')),
+	:class => 'btn btn-danger' %>
+</div>

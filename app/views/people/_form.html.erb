@@ -1,0 +1,96 @@
+<%= form_for @person, :html => { :class => 'form-horizontal' } do |f| %>
+<div class="control-group">
+	<%= f.label "Nome", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :name, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Endereço", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :address, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Numero", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :number, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Complemento", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :complement, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Bairro", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :district, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "CEP", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :zipcode, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Cidade", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.collection_select :city_id, City.all, :id, :name, {:prompt => true} %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "CPF", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :cpf, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "RG", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :rg, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "CNPJ", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :cnpj, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "IE", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :ie, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Data de Aniversario", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.date_select :date_birth, :class => 'date_select' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Data do Cadastro", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.date_select :date_registration, :class => 'date_select' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Email", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :email, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Funcao", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.collection_select :profile_id, Profile.all, :id, :name, {:prompt => true} %>
+	</div>
+</div>
+<div class="form-actions">
+	<%= f.submit "Gravar", :class => 'btn btn-primary' %>
+	<%= link_to "Cancelar", people_path, :class => 'btn' %>
+</div>
+<% end %>

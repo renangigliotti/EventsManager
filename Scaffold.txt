@@ -1,0 +1,9 @@
+rails g scaffold Profile name:string
+
+rails g scaffold City name:string state:string country:string
+
+rails g scaffold Person name:string address:string number:string complement:string district:string zipcode:string city_id:integer cpf:string cnpj:string rg:string ie:string  date_birth:date date_registration:date email:string profile_id:integer
+
+rails g scaffold Event name:string
+
+rails g scaffold Item event_id:integer person_id:integer

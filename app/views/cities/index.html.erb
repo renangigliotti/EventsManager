@@ -1,0 +1,24 @@
+<%- model_class = City.new.class -%> <h1>Lista de Cidades</h1>
+<hr/>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Estado</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @cities.each do |city| %>
+		<tr>
+			<td><%= link_to city.name, city_path(city) %></td>
+			<td><%= city.state %></td>
+			<td> <%= link_to "Editar", edit_city_path(city), :class => 'btn btn-mini' %> </td>
+			<td><%= link_to "Excluir", city_path(city), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Confirma ?')), :class => 'btn btn-mini btn-danger' %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to "Cadastrar Cidade", new_city_path, :class => 'btn btn-primary' %>

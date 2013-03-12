@@ -1,0 +1,50 @@
+<%- model_class = Person.new.class -%> <h1>Lista de Pessoas</h1>
+<hr/>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Endereco</th>
+			<th>Numero</th>
+			<th>Complemento</th>
+			<th>Bairro</th>
+			<th>CEP</th>
+			<th>Cidade</th>
+			<th>CPF</th>
+			<th>RG</th>
+			<th>CNPJ</th>
+			<th>IE</th>
+			<th>Aniversario</th>
+			<th>Cadastro</th>
+			<th>Email</th>
+			<th>Funcao</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @people.each do |person| %>
+		<tr>
+			<td><%= link_to person.name, person_path(person) %></td>
+			<td><%= person.address %></td>
+			<td><%= person.number %></td>
+			<td><%= person.complement %></td>
+			<td><%= person.district %></td>
+			<td><%= person.zipcode %></td>
+			<td><%= person.city.name unless person.city.nil? %></td>
+			<td><%= person.cpf %></td>
+			<td><%= person.rg %></td>
+			<td><%= person.cnpj %></td>
+			<td><%= person.ie %></td>
+			<td><%= person.date_birth.strftime("%d/%m/%Y")  %></td>
+			<td><%= person.date_registration.strftime("%d/%m/%Y")  %></td>
+			<td><%= person.email %></td>
+			<td><%= person.profile.name unless person.profile.nil? %></td>
+			<td> <%= link_to "Editar", edit_person_path(person), :class => 'btn btn-mini' %> </td>
+			<td><%= link_to "Excluir", person_path(person), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger' %> </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<hr/>
+<%= link_to "Cadastrar Pessoa", new_person_path, :class => 'btn btn-primary' %>

@@ -1,0 +1,18 @@
+<%= form_for @city, :html => { :class => 'form-horizontal' } do |f| %>
+<div class="control-group">
+	<%= f.label "Nome", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :name, :class => 'text_field' %>
+	</div>
+</div>
+<div class="control-group">
+	<%= f.label "Estado", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :state, :class => 'text_field' %>
+	</div>
+</div>
+<div class="form-actions">
+	<%= f.submit "Gravar", :class => 'btn btn-primary' %>
+	<%= link_to "Cancelar", cities_path, :class => 'btn' %>
+</div>
+<% end %>

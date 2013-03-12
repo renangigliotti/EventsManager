@@ -1,0 +1,7 @@
+<% @event.items.each do |a| %>
+<tr>
+	<td><%= a.person.name %></td>
+	<td><%= a.person.profile.name %></td>
+	<td><%= link_to 'Excluir', [@event, a], confirm: 'Confirma ?', method: :delete, remote: true %></td>
+</tr>
+<% end %>
